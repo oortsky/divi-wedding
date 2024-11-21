@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+require('dotenv').config();
 
-module.exports = nextConfig
+const nextConfig = {
+  env: {
+    ACCESS_KEY: process.env.ACCESS_KEY
+  }
+};
+
+module.exports = nextConfig;

@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.46.1",
+    "bootstrap-icons": "^1.11.3",
+    "canvas-confetti": "^1.9.3",
+    "dotenv": "^16.4.5",
+    "gsap": "^3.12.5",
+    "next": "13.5.7",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.7"
+    "ulid": "^2.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^10",
+    "daisyui": "^4.12.14",
     "postcss": "^8",
     "tailwindcss": "^3"
   }
