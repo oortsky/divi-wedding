@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 
 export default function SplashScreen({ onComplete }) {
   const splashRef = useRef(null);
-  const textRef = useRef(null); // Refs untuk elemen teks
 
   useEffect(() => {
     // Timeline untuk animasi utama splash screen
@@ -22,24 +21,9 @@ export default function SplashScreen({ onComplete }) {
       { opacity: 0, y: -50, delay: 1.5 }
     );
 
-    // Membuat timeline untuk mengubah teks
-    const blurbs = ["Selamat", "Datang", "Di", "Pernikahan", "Kami"];
-    const tl = gsap.timeline();
-    const delay = 0.25;
-
-    // Mengganti teks di dalam elemen
-    blurbs.forEach((blurb, i) => {
-      tl.add(() => {
-        if (textRef.current) {
-          textRef.current.innerText = blurb;
-        }
-      }, i * delay);
-    });
-
     // Cleanup ketika komponen di-unmount
     return () => {
       animation.kill();
-      tl.kill();
     };
   }, [onComplete]);
 
@@ -47,8 +31,6 @@ export default function SplashScreen({ onComplete }) {
     <div
       ref={splashRef}
       className="fixed inset-0 flex items-center justify-center bg-primary-blue text-white"
-    >
-      <div ref={textRef} className="text text-5xl text-center font-bold">Selamat</div>
-    </div>
+    ></div>
   );
 }
