@@ -1,5 +1,3 @@
-// app/403/page.js
-
 export default function Forbidden() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-base-100 text-center space-y-6 p-6">

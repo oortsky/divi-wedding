@@ -11,7 +11,6 @@ const Hero = () => {
 
   const searchParams = useSearchParams();
 
-  // Function to play audio with error handling
   const playAudio = async () => {
     if (audioRef.current) {
       audioRef.current.volume = 0.1;
@@ -24,7 +23,6 @@ const Hero = () => {
     }
   };
 
-  // Fetch name and pronoun from URL params when component mounts
   useEffect(() => {
     const n = searchParams.get("n");
     const p = searchParams.get("p");
@@ -33,7 +31,6 @@ const Hero = () => {
     setPronoun(p || "Bapak/Ibu/Saudara/i");
   }, [searchParams]);
 
-  // Initialize scrollLocked state from localStorage
   useEffect(() => {
     if (typeof window !== "undefined") {
       const storedScrollLocked = localStorage.getItem("scrollLocked");
@@ -41,7 +38,6 @@ const Hero = () => {
     }
   }, []);
 
-  // Handle scroll locking/unlocking and audio playback
   useEffect(() => {
     const rootElement = document.documentElement;
     if (scrollLocked) {
@@ -49,7 +45,7 @@ const Hero = () => {
     } else {
       enableScroll(rootElement);
       localStorage.setItem("scrollLocked", "false");
-      playAudio(); // Play audio only if scrolling is unlocked
+      playAudio();
     }
     return () => enableScroll(rootElement);
   }, [scrollLocked]);
@@ -67,7 +63,6 @@ const Hero = () => {
     element.style.scrollBehavior = "smooth";
   };
 
-  // Toggle audio play/pause state
   const toggleAudio = async () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -84,7 +79,6 @@ const Hero = () => {
     }
   };
 
-  // Unlock scroll and play audio after user clicks "Lihat Undangan"
   const handleUnlockScroll = () => {
     setScrollLocked(false);
     document.getElementById("home").scrollIntoView({ behavior: "smooth" });
@@ -122,7 +116,6 @@ const Hero = () => {
         </button>
       </main>
 
-      {/* Audio Icon Wrapper */}
       {!scrollLocked && (
         <div
           className="fixed bottom-6 right-6 cursor-pointer flex items-center justify-center z-40 text-gray-700"
@@ -134,7 +127,6 @@ const Hero = () => {
         </div>
       )}
 
-      {/* Audio Element */}
       <audio ref={audioRef} id="song" src="/audio/song.mp3" loop />
     </section>
   );

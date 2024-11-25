@@ -13,14 +13,14 @@ const Footer = () => {
           <div className="text-center">
             <small className="block">
               &copy; {new Date().getFullYear()} Dove by{" "}
-              <a className="italic" href="https://instagram.com/axara.dev">
+              <a className="italic" target="_blank" href="https://instagram.com/axara.dev">
                 Axara
               </a>
               . All Rights Reserved.
             </small>
             <small className="block">
               Design by{" "}
-              <a className="italic" href="https://instagram.com/oortsky">
+              <a className="italic" target="_blank" href="https://instagram.com/oortsky">
                 @oortsky
               </a>
               .

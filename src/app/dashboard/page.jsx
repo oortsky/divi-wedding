@@ -1,15 +1,12 @@
-// app/dashboard/page.js
 "use client";
 
 import { useState, useEffect } from "react";
-import { supabase } from "../../libs/supabase.js"; // Import Supabase
+import { supabase } from "../../libs/supabase.js";
 
 export default function Dashboard() {
-  // State to store guest data
   const [guestData, setGuestData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Function to fetch data from the database
   useEffect(() => {
     const fetchGuestData = async () => {
       setLoading(true);
@@ -28,7 +25,6 @@ export default function Dashboard() {
     fetchGuestData();
   }, []);
 
-  // Calculate statistics based on guest data
   const totalGuests = guestData.reduce((acc, guest) => acc + guest.count, 0);
   const attendingGuests = guestData
     .filter(guest => guest.attending)
@@ -37,9 +33,9 @@ export default function Dashboard() {
 
   if (loading) return (
     <div className="w-full h-[100dvh] flex justify-center items-center">
-    <span className="loading loading-ring loading-lg"></span>
+      <span className="loading loading-ring loading-lg"></span>
     </div>
-    )
+  );
 
   return (
     <div className="p-6 space-y-6">
@@ -48,7 +44,6 @@ export default function Dashboard() {
         Selamat datang di halaman dashboard Anda!
       </p>
 
-      {/* Statistics Section */}
       <div className="overflow-x-auto shadow-lg rounded-lg gap-6">
         <div className="stats">
           <div className="stat">
@@ -81,7 +76,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Guests Table */}
       <div className="overflow-x-auto shadow-lg rounded-lg">
         <table className="table table-zebra w-full whitespace-nowrap">
           <thead className="bg-gray-200 text-gray-700">
@@ -93,25 +87,33 @@ export default function Dashboard() {
             </tr>
           </thead>
           <tbody>
-            {guestData.map((guest, index) => (
-              <tr
-                key={index}
-                className={guest.attending ? "bg-green-50" : "bg-red-50"}
-              >
-                <th>{index + 1}</th>
-                <td>{guest.name}</td>
-                <td>{guest.count} orang</td>
-                <td>
-                  <div
-                    className={`badge ${
-                      guest.attending ? "badge-success" : "badge-error"
-                    }`} // Ensures the badge stays on one line
-                  >
-                    {guest.attending ? "Hadir" : "Tidak Hadir"}
-                  </div>
+            {guestData.length === 0 ? (
+              <tr>
+                <td colSpan="4" className="text-center py-4 text-gray-500">
+                  Tidak Ada Tamu
                 </td>
               </tr>
-            ))}
+            ) : (
+              guestData.map((guest, index) => (
+                <tr
+                  key={index}
+                  className={guest.attending ? "bg-green-50" : "bg-red-50"}
+                >
+                  <th>{index + 1}</th>
+                  <td>{guest.name}</td>
+                  <td>{guest.count} orang</td>
+                  <td>
+                    <div
+                      className={`badge ${
+                        guest.attending ? "badge-success" : "badge-error"
+                      }`} // Ensures the badge stays on one line
+                    >
+                      {guest.attending ? "Hadir" : "Tidak Hadir"}
+                    </div>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>

@@ -1,4 +1,3 @@
-// app/page.js
 "use client";
 
 import { useState, useEffect } from "react";
@@ -14,6 +13,24 @@ import Footer from "@/components/Footer";
 
 export default function App() {
   const [isSplashComplete, setIsSplashComplete] = useState(false);
+
+  useEffect(() => {
+    // Fungsi untuk mengubah sensitivitas scroll
+    const handleWheel = event => {
+      // Mengurangi sensitivitas scroll dengan mengalikan dengan nilai tertentu
+      event.preventDefault();
+      const scrollAmount = event.deltaY * 0.3; // Angka 0.3 untuk memperlambat scroll
+      window.scrollBy(0, scrollAmount); // Mengatur scroll sesuai dengan jumlah yang diinginkan
+    };
+
+    // Menambahkan event listener untuk scroll
+    window.addEventListener("wheel", handleWheel);
+
+    // Membersihkan event listener ketika komponen unmount
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   return (
     <>
