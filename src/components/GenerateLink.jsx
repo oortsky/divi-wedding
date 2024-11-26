@@ -95,7 +95,7 @@ const GenerateLink = () => {
     );
 
   return (
-    <div className="max-w-lg mx-auto p-6 py-20">
+    <div className="max-w-lg mx-auto p-6 pb-20">
       <h1 className="text-3xl font-bold text-gray-800 mb-4">Generate Links</h1>
       <p className="text-base text-gray-500 mb-6">
         Generate link untuk Anda bagikan.
