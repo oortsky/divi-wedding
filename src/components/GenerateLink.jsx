@@ -5,8 +5,6 @@ const GenerateLink = () => {
   const [links, setLinks] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-
   // Update input values
   const handleInputChange = (index, field, value) => {
     const newInputs = [...inputs];
@@ -33,7 +31,7 @@ const GenerateLink = () => {
       .filter(input => input.name.trim() && input.pronoun.trim()) // Only generate links for completed inputs
       .map(
         input =>
-          `${baseUrl}/?n=${encodeURIComponent(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/?n=${encodeURIComponent(
             input.name
           )}&p=${encodeURIComponent(input.pronoun)}`
       );
