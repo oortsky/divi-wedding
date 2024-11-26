@@ -17,7 +17,29 @@ const sacramento = Sacramento({
 
 export const metadata = {
   title: "Divi Wedding — Official Invitation",
-  description: "Divi Wedding Invitation by Dove from Axara"
+  description: "Undangan Pernikahan Nasrudin & Dewi Octaviani (Vivi).",
+  openGraph: {
+    title: "Divi Wedding — Official Invitation",
+    description: "Undangan Pernikahan Nasrudin & Dewi Octaviani (Vivi).",
+    url: `${process.env.BASE_URL}`,
+    siteName: "Divi Wedding — Official Invitation",
+    images: [
+      {
+        url: "images/preview.jpg",
+        width: 800,
+        height: 600,
+        alt: "Preview Image"
+      }
+    ],
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Divi Wedding — Official Invitation",
+    description: "Undangan Pernikahan Nasrudin & Dewi Octaviani (Vivi).",
+    images: ["images/preview.jpg"]
+  }
 };
 
 export default function RootLayout({ children }) {

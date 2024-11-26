@@ -31,11 +31,12 @@ export default function Dashboard() {
     .reduce((acc, guest) => acc + guest.count, 0);
   const notAttendingGuests = totalGuests - attendingGuests;
 
-  if (loading) return (
-    <div className="w-full h-[100dvh] flex justify-center items-center">
-      <span className="loading loading-ring loading-lg"></span>
-    </div>
-  );
+  if (loading)
+    return (
+      <div className="w-full h-[100dvh] flex justify-center items-center">
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
 
   return (
     <div className="p-6 space-y-6">

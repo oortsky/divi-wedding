@@ -12,13 +12,14 @@ const Info = () => {
   const mapRef = useRef(null);
   const cardAkadRef = useRef(null);
   const cardResepsiRef = useRef(null);
+  const viewMapButtonRef = useRef(null); // Ref for View Maps button
 
   const locationUrl = [
     {
-      link: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=R42Q%252BGCR%2BSaung%2Byanta%2BKi%2Babrag%2C%2BJl.%2BKtr.%2BDesa%2BBanjarsari%2C%2BBanjarsari%2C%2BKec.%2BSukatani%2C%2BKabupaten%2BBekasi%2C%2BJawa%2BBarat%2B17630%2F%40-6.1986193%2C107.1385164%2C15z%2Fdata%3D!4m6!3m5!1s0x2e6987007d72800b%3A0x3337417d24748ff0!8m2!3d-6.1986193!4d107.1385164!16s%252Fg%252F11vk5n25p8&zoom=17&maptype=satellite"
+      link: `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_KEY}&q=Jl.+Ktr.+Desa+Banjarsari,+Banjarsari,+Kec.+Sukatani,+Kabupaten+Bekasi,+Jawa+Barat+17630/@-6.2021586,107.1387839,15z/data=!4m6!3m5!1s0x2e6986786b9a94eb:0x22690ea5ac5ed3c3!8m2!3d-6.2021586!4d107.1387839!16s%2Fg%2F11g6r8v_lr&zoom=17&maptype=satellite`
     },
     {
-      link: "https://maps.app.goo.gl/Jook48PZ6UVAvm3o8"
+      link: "https://maps.app.goo.gl/Pyt78zHF6YHC8AqA7"
     }
   ];
 
@@ -89,6 +90,22 @@ const Info = () => {
         }
       }
     );
+
+    // Animating View Maps button using fromTo
+    gsap.fromTo(
+      viewMapButtonRef.current,
+      { opacity: 0, scale: 0.8 }, // Start with slightly smaller scale
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: viewMapButtonRef.current,
+          start: "top 90%"
+        }
+      }
+    );
   }, []);
 
   return (
@@ -153,6 +170,7 @@ const Info = () => {
             </div>
 
             <a
+              ref={viewMapButtonRef} // Add ref to the button
               href={locationUrl[1].link}
               target="_blank"
               className="btn w-full max-w-sm shadow-md bg-primary-blue text-white border-primary-blue hover:text-primary-blue hover:bg-white hover:border-white"
