@@ -6,7 +6,7 @@ const Navbar = ({ children }) => {
         <div className="navbar sticky top-0 bg-transparent backdrop-blur-lg px-6 z-30">
           <div className="flex-1 px-2.5">
             <h1 className="font-sacramento text-primary-blue text-3xl font-semibold">
-              ND Wedding
+              ND
             </h1>
           </div>
           <div className="flex-none md:hidden">
@@ -66,7 +66,7 @@ const Navbar = ({ children }) => {
         <div className="min-h-full w-80 bg-white p-4">
           <div className="flex justify-between items-center mb-4">
             <h2 className="font-sacramento text-primary-blue text-3xl font-semibold px-5">
-              ND Wedding
+              ND
             </h2>
             <label
               htmlFor="my-drawer-3"
