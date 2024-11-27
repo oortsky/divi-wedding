@@ -16,7 +16,7 @@ const Info = () => {
 
   const locationUrl = [
     {
-      link: `https://www.google.com/maps/embed/v1/place?key=${process.env.GOOGLE_MAPS_KEY}&q=Jl.+Ktr.+Desa+Banjarsari,+Banjarsari,+Kec.+Sukatani,+Kabupaten+Bekasi,+Jawa+Barat+17630/@-6.2021586,107.1387839,15z/data=!4m6!3m5!1s0x2e6986786b9a94eb:0x22690ea5ac5ed3c3!8m2!3d-6.2021586!4d107.1387839!16s%2Fg%2F11g6r8v_lr&zoom=17&maptype=satellite`
+      link: `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=Jl.+Ktr.+Desa+Banjarsari,+Banjarsari,+Kec.+Sukatani,+Kabupaten+Bekasi,+Jawa+Barat+17630/@-6.2021586,107.1387839,15z/data=!4m6!3m5!1s0x2e6986786b9a94eb:0x22690ea5ac5ed3c3!8m2!3d-6.2021586!4d107.1387839!16s%2Fg%2F11g6r8v_lr&zoom=17&maptype=satellite`
     },
     {
       link: "https://maps.app.goo.gl/Pyt78zHF6YHC8AqA7"
