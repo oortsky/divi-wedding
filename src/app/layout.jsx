@@ -17,13 +17,13 @@ const sacramento = Sacramento({
 });
 
 export const metadata = {
-  title: "Divi Wedding — Official Invitation",
+  title: "ND Wedding — Official Invitation",
   description: "Undangan Pernikahan Nasrudin & Dewi Octaviani (Vivi).",
   openGraph: {
-    title: "Divi Wedding — Official Invitation",
+    title: "ND Wedding — Official Invitation",
     description: "Undangan Pernikahan Nasrudin & Dewi Octaviani (Vivi).",
     url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
-    siteName: "Divi Wedding — Official Invitation",
+    siteName: "ND Wedding — Official Invitation",
     images: [
       {
         url: `${process.env.NEXT_PUBLIC_BASE_URL}/images/preview.png`,
@@ -37,7 +37,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Divi Wedding — Official Invitation",
+    title: "ND Wedding — Official Invitation",
     description: "Undangan Pernikahan Nasrudin & Dewi Octaviani (Vivi).",
     images: [`${process.env.NEXT_PUBLIC_BASE_URL}/images/preview.png`]
   }

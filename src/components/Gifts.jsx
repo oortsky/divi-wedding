@@ -24,8 +24,8 @@ const Gifts = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top 80%", // memulai animasi saat 80% dari elemen masuk viewport
-          toggleActions: "play none none reverse",
-        },
+          toggleActions: "play none none reverse"
+        }
       }
     );
 
@@ -40,8 +40,8 @@ const Gifts = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: titleRef.current,
-          start: "top 90%", // memulai animasi saat 90% dari elemen masuk viewport
-        },
+          start: "top 90%" // memulai animasi saat 90% dari elemen masuk viewport
+        }
       }
     );
 
@@ -57,8 +57,8 @@ const Gifts = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: textRef.current,
-          start: "top 95%",
-        },
+          start: "top 95%"
+        }
       }
     );
 
@@ -74,21 +74,25 @@ const Gifts = () => {
         ease: "power3.out",
         scrollTrigger: {
           trigger: bankInfoRef.current,
-          start: "top 95%",
-        },
+          start: "top 95%"
+        }
       }
     );
   }, []);
 
   return (
-    <section id="gifts" className="pb-16 pt-28 p-6 bg-white relative" ref={sectionRef}>
+    <section
+      id="gifts"
+      className="pb-16 pt-28 p-6 bg-white relative"
+      ref={sectionRef}
+    >
       <img
         src="/images/flowers.png"
         alt="Bunga Atas"
         className="absolute left-0 top-0 w-full h-48 opacity-70"
         style={{
           zIndex: 1,
-          transform: "scale(-1)", // flip horizontal
+          transform: "scale(-1)" // flip horizontal
         }}
       />
 
@@ -107,10 +111,7 @@ const Gifts = () => {
             >
               Kirim Hadiah
             </h2>
-            <p
-              className="text-sm font-light text-gray-500 mt-4"
-              ref={textRef}
-            >
+            <p className="text-sm font-light text-gray-500 mt-4" ref={textRef}>
               Kehadiran Anda adalah hadiah terindah bagi kami. Jika ingin
               memberikan hadiah, dapat dikirim ke rekening di bawah. Terima
               kasih!
@@ -131,6 +132,15 @@ const Gifts = () => {
                   </div>
                   <p className="text-gray-700 text-sm mt-2">
                     9927693019 a.n. NASRUDIN
+                  </p>
+                </li>
+                <hr className="w-full border-gray-300" />
+                <li className="py-4">
+                  <div className="text-gray-500 font-semibold text-base">
+                    DANA
+                  </div>
+                  <p className="text-gray-700 text-sm mt-2">
+                    089665085400 a.n. DEWI OCTAVIANI
                   </p>
                 </li>
               </ul>

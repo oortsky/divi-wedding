@@ -13,14 +13,22 @@ const Footer = () => {
           <div className="text-center">
             <small className="block">
               &copy; {new Date().getFullYear()} Dove by{" "}
-              <a className="italic" target="_blank" href="https://instagram.com/axara.dev">
+              <a
+                className="italic"
+                target="_blank"
+                href="https://instagram.com/axara.dev"
+              >
                 Axara
               </a>
               . All Rights Reserved.
             </small>
             <small className="block">
               Design by{" "}
-              <a className="italic" target="_blank" href="https://instagram.com/oortsky">
+              <a
+                className="italic"
+                target="_blank"
+                href="https://instagram.com/oortsky"
+              >
                 @oortsky
               </a>
               .
@@ -28,23 +36,23 @@ const Footer = () => {
 
             <ul className="flex justify-center gap-3 mt-3">
               <li>
-                <a href="#">
+                <a target="_blank" href="https://instagram.com/oortsky">
                   <i className="bi bi-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i className="bi bi-twitter"></i>
+                <a target="_blank" href="https://x.com/oortsky">
+                  <i className="bi bi-twitter-x"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a target="_blank" href="https://wa.me/6283831038379">
                   <i className="bi bi-whatsapp"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i className="bi bi-discord"></i>
+                <a target="_blank" href="https://github.com/oortsky">
+                  <i className="bi bi-github"></i>
                 </a>
               </li>
             </ul>
